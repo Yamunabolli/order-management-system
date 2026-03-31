@@ -47,11 +47,10 @@ admin-dashboard/
 **1**. Clone the repository
    git clone  
 cd admin-dashboard
-**2**. Install frontend dependencies
-   npm install
-**3**. Setup backend
-   cd server
-   npm install
+**2**. Install concurrently (if not installed)
+npm install concurrently --save-dev
+**3** .Run both servers together
+   npm run dev
 **4**. Run backend server
    npm start
 ****Server runs on:   http://localhost:5000
