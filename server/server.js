@@ -70,3 +70,5 @@ setInterval(() => {
 
   orders.push(newOrder);
 }, 10000);
+
+module.exports = app;
