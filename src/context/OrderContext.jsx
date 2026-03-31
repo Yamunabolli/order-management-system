@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { getOrders, updateOrderStatus } from "../services/api";
+import {  useCallback } from "react";
 
 const OrderContext = createContext();
 
@@ -10,23 +11,25 @@ const [search, setSearch] = useState("");
 const [sort, setSort] = useState("latest");
 const [notification, setNotification] = useState("");
 
-const fetchOrders = async () => {
+
+const fetchOrders = useCallback(async () => {
   const data = await getOrders();
 
-  if (data.length > orders.length) {
-    setNotification("New order received!");
-  }
-
-  setOrders(data);
-};
+  setOrders((prevOrders) => {
+    if (data.length > prevOrders.length) {
+      setNotification("New order received!");
+    }
+    return data;
+  });
+}, []);
   
 
-  useEffect(() => {
-    fetchOrders();
+useEffect(() => {
+  fetchOrders();
 
-    const interval = setInterval(fetchOrders, 3000);
-    return () => clearInterval(interval);
-  }, []);
+  const interval = setInterval(fetchOrders, 3000);
+  return () => clearInterval(interval);
+}, [fetchOrders]);
 
   const updateStatus = async (id, status) => {
     // Optimistic UI
