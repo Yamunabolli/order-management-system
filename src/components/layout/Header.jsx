@@ -1,4 +1,3 @@
-// components/layout/Header.jsx
 const Header = () => {
   return (
     <div style={{ padding: 16, background: "#222", color: "#fff" }}>

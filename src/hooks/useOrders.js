@@ -1,4 +1,3 @@
-// hooks/useOrders.js
 import { useEffect, useState } from "react";
 import { getOrders } from "../services/api";
 

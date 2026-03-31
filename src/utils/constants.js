@@ -1,4 +1,3 @@
-// utils/constants.js
 export const ORDER_STATUS = [
   "Pending",
   "Accepted",
