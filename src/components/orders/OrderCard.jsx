@@ -27,7 +27,7 @@ const OrderCard = ({ order }) => {
       }}>
         {order.status}
       </span>
-<div style={{
+{/* <div style={{
   background: "linear-gradient(135deg, #ffffff, #f3f3f3)",
   padding: 18,
   borderRadius: 16,
@@ -37,7 +37,7 @@ const OrderCard = ({ order }) => {
 }}
 onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.03)"}
 onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}
-></div>
+></div> */}
       <div style={{ marginTop: 10 }}>
         <select
           value={order.status}
